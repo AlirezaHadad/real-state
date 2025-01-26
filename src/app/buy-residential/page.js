@@ -2,33 +2,19 @@ import BuyResidentialsPage from "@/template/BuyResidentialsPage";
 
 async function BuyResidentials({ searchParams }) {
   // بهتر است در کامپوننت های سرورساید از ای پی آی روت استفاده نکنیم(این مورد حالت تمرینی دارد)
-  // const res = await fetch("http://localhost:3000/api/profile", {
-  //   cache: "no-store",
-  // });
-  // const data = await res.json();
+  const res = await fetch(`${process.env.NEXTAUTH_URL}api/profile`, {
+    cache: "no-store",
+  });
+  const data = await res.json();
 
-  // if (data.error) return <h3>مشکلی پیش آمده است</h3>;
-  const data = [
-    {
-      _id : 1,
-      title : "test",
-      location : "test",
-      price : 1
-    },
-    {
-      _id : 2,
-      title : "test",
-      location : "test",
-      price : 2
-    }
-  ]
-  // let finalData = data.data;
-  // if (searchParams.category) {
-  //   finalData = finalData.filter((i) => i.category === searchParams.category);
-  // }
+  if (data.error) return <h3>مشکلی پیش آمده است</h3>;
 
+  let finalData = data.data;
+  if (searchParams.category) {
+    finalData = finalData.filter((i) => i.category === searchParams.category);
+  }
 
-  return <BuyResidentialsPage data={data} />;
+  return <BuyResidentialsPage data={finalData} />;
 }
 
 export default BuyResidentials;
