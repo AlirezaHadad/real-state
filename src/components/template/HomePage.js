@@ -11,8 +11,8 @@ function HomePage() {
         <div className={styles.desc}>
           <h1>سامانه خرید و اجاره ملک</h1>
           <ul>
-            {services.map((i) => (
-              <li key={i}>
+            {services.map((i,index) => (
+              <li key={index}>
                 <FiCircle />
                 <span>{i}</span>
               </li>
