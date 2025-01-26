@@ -28,8 +28,8 @@ function HomePage() {
       <div className={styles.city}>
         <h3>شهر های پر بازدید</h3>
         <ul>
-          {cities.map((i) => (
-            <li key={i}>
+          {cities.map((i,index) => (
+            <li key={index}>
               <FaCity />
               <span>{i}</span>
             </li>
