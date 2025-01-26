@@ -20,6 +20,6 @@ const userSchema = new Schema({
   },
 });
 
-const UserRealState = models.UserRealState || model("UserRealState", userSchema);
+const User = models.UserRealState || model("UserRealState", userSchema);
 
 export default User;
