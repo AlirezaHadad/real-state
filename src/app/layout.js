@@ -4,7 +4,7 @@ import { yekan } from "@/utils/fonts";
 import "./globals.css";
 
 export const metadata = {
-  title: "املاک | پروژه بوتواستارت",
+  title: "املاک | خرید و فروش",
   description: "سایت خرید و فروش املاک",
   icons: { icon: "./favicon.ico" },
 };
